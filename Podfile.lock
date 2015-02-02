@@ -1,21 +1,39 @@
 PODS:
+  - Alamofire (1.1.4)
+  - Argo (0.3.2):
+    - Runes
   - Expecta (0.3.1)
   - OCMock (3.1.2)
   - OHHTTPStubs (3.1.10):
     - OHHTTPStubs/Core (= 3.1.10)
   - OHHTTPStubs/Core (3.1.10)
+  - Runes (1.1.1)
   - Specta (0.2.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 1.1)
+  - Argo (from `https://github.com/thoughtbot/Argo`)
   - Expecta
   - OCMock
   - OHHTTPStubs
   - Specta
 
+EXTERNAL SOURCES:
+  Argo:
+    :git: https://github.com/thoughtbot/Argo
+
+CHECKOUT OPTIONS:
+  Argo:
+    :commit: 58ed33870dc06fae3616b8b45d2c1ded1973a84b
+    :git: https://github.com/thoughtbot/Argo
+
 SPEC CHECKSUMS:
+  Alamofire: 524225da382071ee3e6d0badd0ee4b4dc36740de
+  Argo: f99f70372dfabaf22b781a8391c585323e8df55b
   Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
   OCMock: ecdd510b73ef397f2f97274785c1e87fd147c49f
   OHHTTPStubs: 2038e929b6abb94881000524c1cb4aba0a1bb4a2
+  Runes: 5268f17b84bd4522494a3ab3291f18c84e3e9924
   Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
 
 COCOAPODS: 0.36.0.beta.1
