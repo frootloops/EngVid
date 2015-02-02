@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -o pipefail
+
+xcodebuild test -workspace EngVid.xcworkspace -scheme EngVid -sdk iphonesimulator BUILD_ACTIVE_ARCH=NO | xcpretty -t -c
