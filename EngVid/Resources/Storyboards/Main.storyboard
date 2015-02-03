@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--English Lessons-->
         <scene sceneID="dny-ID-ujK">
             <objects>
                 <tableViewController id="eLX-FX-pIp" customClass="VideoViewController" customModule="EngVid" customModuleProvider="target" sceneMemberID="viewController">
@@ -13,11 +13,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Video" id="fUL-Ln-fmF">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Video" rowHeight="82" id="Wm5-Pa-LAP" customClass="VideoCell" customModule="EngVid" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fUL-Ln-fmF" id="whn-9m-1zf">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wm5-Pa-LAP" id="UZZ-3K-zTp">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Video title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2Z-EC-iFJ">
+                                            <rect key="frame" x="20" y="20" width="560" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Tags" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZD-ZP-iEh">
+                                            <rect key="frame" x="20" y="44" width="560" height="17.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="G2Z-EC-iFJ" firstAttribute="leading" secondItem="UZZ-3K-zTp" secondAttribute="leading" constant="20" id="2Wu-ve-ndy"/>
+                                        <constraint firstItem="xZD-ZP-iEh" firstAttribute="top" secondItem="G2Z-EC-iFJ" secondAttribute="bottom" constant="4" id="2lb-Zl-Ko4"/>
+                                        <constraint firstItem="G2Z-EC-iFJ" firstAttribute="top" secondItem="UZZ-3K-zTp" secondAttribute="top" constant="20" id="7fS-nv-SqQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="xZD-ZP-iEh" secondAttribute="bottom" constant="19.5" id="JUI-Gr-Ipg"/>
+                                        <constraint firstAttribute="trailing" secondItem="G2Z-EC-iFJ" secondAttribute="trailing" constant="20" id="YY7-rp-Cgd"/>
+                                        <constraint firstAttribute="trailing" secondItem="xZD-ZP-iEh" secondAttribute="trailing" constant="20" id="wY4-jN-fn8"/>
+                                        <constraint firstItem="xZD-ZP-iEh" firstAttribute="leading" secondItem="UZZ-3K-zTp" secondAttribute="leading" constant="20" id="yk4-EP-R4T"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="tags" destination="xZD-ZP-iEh" id="jp9-p7-2la"/>
+                                    <outlet property="title" destination="G2Z-EC-iFJ" id="T8n-jh-pEw"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -25,11 +53,13 @@
                             <outlet property="delegate" destination="eLX-FX-pIp" id="l4A-cp-VT7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="KrY-ld-wbm"/>
-                    <connections>
-                        <outlet property="tableView" destination="KzO-ze-yEX" id="5Bw-lC-AOj"/>
-                        <outlet property="videoTableView" destination="KzO-ze-yEX" id="54l-MZ-3CU"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="English Lessons" id="KrY-ld-wbm"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="6Lg-kB-RSP">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh:" destination="eLX-FX-pIp" eventType="valueChanged" id="XNP-VG-irv"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vq9-VX-GFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

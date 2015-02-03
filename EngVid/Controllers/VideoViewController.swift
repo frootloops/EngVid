@@ -11,7 +11,6 @@ import Alamofire
 import Argo
 
 class VideoViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
-  @IBOutlet var videoTableView: UITableView!
   var videos = Array<Video>()
   
   override func viewDidLoad() {
@@ -19,6 +18,16 @@ class VideoViewController: UITableViewController, UITableViewDelegate, UITableVi
     loadVideos()
   }
     
+  @IBAction func refresh(sender: UIRefreshControl) {
+    Alamofire.request(.GET, "https://engvid.herokuapp.com/api/videos")
+      .responseJSON { (_, _, JSON, _) in
+        let documents = JSON!.valueForKey("documents") as [NSDictionary]
+        self.videos = documents.map { Video.decode(JSONValue.parse($0))! }
+        self.tableView.reloadData()
+        sender.endRefreshing()
+    }
+  }
+  
   // MARK: - Table View
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,7 +38,6 @@ class VideoViewController: UITableViewController, UITableViewDelegate, UITableVi
     let cell = tableView.dequeueReusableCellWithIdentifier("Video", forIndexPath: indexPath) as UITableViewCell
     
     let object = videos[indexPath.row] as Video
-    cell.textLabel!.text = object.title
     return cell
   }
   
@@ -40,7 +48,7 @@ class VideoViewController: UITableViewController, UITableViewDelegate, UITableVi
       .responseJSON { (_, _, JSON, _) in
         let documents = JSON!.valueForKey("documents") as [NSDictionary]
         self.videos += documents.map { Video.decode(JSONValue.parse($0))! }
-        self.videoTableView.reloadData()
+        self.tableView.reloadData()
     }
   }
 }
