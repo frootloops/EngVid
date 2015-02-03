@@ -12,7 +12,7 @@ import Argo
 
 class VideoViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
   @IBOutlet var videoTableView: UITableView!
-  var videos: [Video] = []
+  var videos = Array<Video>()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -21,19 +21,15 @@ class VideoViewController: UITableViewController, UITableViewDelegate, UITableVi
     
   // MARK: - Table View
   
-  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 1
-  }
-  
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return videos.count
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("Video", forIndexPath: indexPath) as UITableViewCell
     
-  //  let object = videos[indexPath.row] as NSDate
-//    cell.textLabel!.text = object.description
+    let object = videos[indexPath.row] as Video
+    cell.textLabel!.text = object.title
     return cell
   }
   
@@ -44,6 +40,7 @@ class VideoViewController: UITableViewController, UITableViewDelegate, UITableVi
       .responseJSON { (_, _, JSON, _) in
         let documents = JSON!.valueForKey("documents") as [NSDictionary]
         self.videos += documents.map { Video.decode(JSONValue.parse($0))! }
+        self.videoTableView.reloadData()
     }
   }
 }
