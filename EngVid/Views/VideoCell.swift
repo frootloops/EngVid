@@ -11,6 +11,10 @@ import UIKit
 class VideoCell: UITableViewCell {
   @IBOutlet weak var title: UILabel!
   @IBOutlet weak var tags: UILabel!
+  
+  var video: Video! {
+    didSet { fill() }
+  }
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -20,4 +24,8 @@ class VideoCell: UITableViewCell {
     super.setSelected(selected, animated: animated)
   }
   
+  func fill() {
+    title.text = video.title
+    tags.text = ", ".join(video.tags)
+  }
 }
