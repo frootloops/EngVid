@@ -11,17 +11,18 @@ import Alamofire
 import Argo
 
 class VideoViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
-  var videos = Array<Video>()
   var app = UIApplication.sharedApplication()
+  var videos = [Video]()
+  var currentPage = 1
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    configureTableView()
     loadVideos()
   }
     
   @IBAction func refresh(sender: UIRefreshControl) {
-    Alamofire.request(.GET, "https://engvid.herokuapp.com/api/videos")
+    currentPage = 1
+    Alamofire.request(.GET, "https://engvid.herokuapp.com/api/videos", parameters: ["page": currentPage])
       .responseJSON { (_, _, JSON, _) in
         let documents = JSON!.valueForKey("documents") as [NSDictionary]
         self.videos = documents.map { Video.decode(JSONValue.parse($0))! }
@@ -43,20 +44,18 @@ class VideoViewController: UITableViewController, UITableViewDelegate, UITableVi
   }
   
   override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-    if (indexPath.row == (videos.count - 1)) && !app.networkActivityIndicatorVisible {
+    if (indexPath.row == (videos.count - 10)) && !app.networkActivityIndicatorVisible {
       loadVideos()
     }
-  }
-  
-  func configureTableView() {
   }
   
   // MARK: - Data source
  
   func loadVideos() {
     app.networkActivityIndicatorVisible = true
-    Alamofire.request(.GET, "https://engvid.herokuapp.com/api/videos")
+    Alamofire.request(.GET, "https://engvid.herokuapp.com/api/videos", parameters: ["page": currentPage])
       .responseJSON { (_, _, JSON, _) in
+        self.currentPage += 1
         let documents = JSON!.valueForKey("documents") as [NSDictionary]
         self.videos += documents.map { Video.decode(JSONValue.parse($0))! }
         self.tableView.reloadData()
