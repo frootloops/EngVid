@@ -49,8 +49,6 @@ class VideoViewController: UITableViewController, UITableViewDelegate, UITableVi
   }
   
   func configureTableView() {
-    tableView.rowHeight = UITableViewAutomaticDimension
-    tableView.estimatedRowHeight = 130.0
   }
   
   // MARK: - Data source
