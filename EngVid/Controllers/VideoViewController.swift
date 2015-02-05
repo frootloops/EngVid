@@ -50,7 +50,7 @@ class VideoViewController: UITableViewController, UITableViewDelegate, UITableVi
   
   func configureTableView() {
     tableView.rowHeight = UITableViewAutomaticDimension
-    tableView.estimatedRowHeight = 160.0
+    tableView.estimatedRowHeight = 130.0
   }
   
   // MARK: - Data source
