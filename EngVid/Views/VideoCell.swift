@@ -11,6 +11,7 @@ import UIKit
 class VideoCell: UITableViewCell {
   @IBOutlet weak var title: UILabel!
   @IBOutlet weak var tags: UILabel!
+  @IBOutlet weak var cover: UIImageView!
   
   var video: Video! {
     didSet { fill() }

@@ -25,27 +25,35 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="TiF-a6-Gbr">
-                                            <rect key="frame" x="8" y="11" width="106" height="60"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Tags" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZD-ZP-iEh">
                                             <rect key="frame" x="122" y="36.5" width="473" height="30.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="TiF-a6-Gbr">
+                                            <rect key="frame" x="8" y="10" width="106" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="a7p-gV-Odb"/>
+                                                <constraint firstAttribute="width" constant="106" id="wS2-dE-0TD"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="G2Z-EC-iFJ" firstAttribute="leading" secondItem="UZZ-3K-zTp" secondAttribute="leading" constant="122" id="2Wu-ve-ndy"/>
                                         <constraint firstItem="xZD-ZP-iEh" firstAttribute="top" secondItem="G2Z-EC-iFJ" secondAttribute="bottom" constant="5" id="2lb-Zl-Ko4"/>
                                         <constraint firstItem="G2Z-EC-iFJ" firstAttribute="top" secondItem="UZZ-3K-zTp" secondAttribute="top" constant="11" id="7fS-nv-SqQ"/>
+                                        <constraint firstItem="TiF-a6-Gbr" firstAttribute="leading" secondItem="UZZ-3K-zTp" secondAttribute="leading" constant="8" id="IwZ-Wi-QEa"/>
                                         <constraint firstAttribute="bottom" secondItem="xZD-ZP-iEh" secondAttribute="bottom" constant="11.5" id="JUI-Gr-Ipg"/>
+                                        <constraint firstAttribute="bottom" secondItem="TiF-a6-Gbr" secondAttribute="bottom" constant="8.5" id="Mt8-DK-BCZ"/>
+                                        <constraint firstItem="G2Z-EC-iFJ" firstAttribute="leading" secondItem="TiF-a6-Gbr" secondAttribute="trailing" constant="8" id="Sao-en-m7t"/>
                                         <constraint firstAttribute="trailing" secondItem="G2Z-EC-iFJ" secondAttribute="trailing" constant="5" id="YY7-rp-Cgd"/>
+                                        <constraint firstItem="xZD-ZP-iEh" firstAttribute="leading" secondItem="TiF-a6-Gbr" secondAttribute="trailing" constant="8" id="bi2-mC-BJf"/>
+                                        <constraint firstItem="TiF-a6-Gbr" firstAttribute="top" secondItem="UZZ-3K-zTp" secondAttribute="top" constant="10" id="swr-Dk-B2a"/>
                                         <constraint firstAttribute="trailing" secondItem="xZD-ZP-iEh" secondAttribute="trailing" constant="5" id="wY4-jN-fn8"/>
-                                        <constraint firstItem="xZD-ZP-iEh" firstAttribute="leading" secondItem="UZZ-3K-zTp" secondAttribute="leading" constant="122" id="yk4-EP-R4T"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="cover" destination="TiF-a6-Gbr" id="skr-ea-dnT"/>
                                     <outlet property="tags" destination="xZD-ZP-iEh" id="jp9-p7-2la"/>
                                     <outlet property="title" destination="G2Z-EC-iFJ" id="T8n-jh-pEw"/>
                                 </connections>
