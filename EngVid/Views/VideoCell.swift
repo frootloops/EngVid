@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HanekeSwift
 
 class VideoCell: UITableViewCell {
   @IBOutlet weak var title: UILabel!
@@ -28,5 +29,6 @@ class VideoCell: UITableViewCell {
   func fill() {
     title.text = video.title
     tags.text = ", ".join(video.tags)
+    cover.hnk_setImageFromURL(video.cover)
   }
 }

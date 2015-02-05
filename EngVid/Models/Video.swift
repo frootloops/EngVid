@@ -14,4 +14,9 @@ struct Video {
   let author: String
   let title: String
   let tags: [String]
+  var cover: NSURL {
+    get {
+      return NSURL(string: "http://i.ytimg.com/vi/\(self.token)/mqdefault.jpg")!
+    }
+  }
 }

@@ -3,6 +3,7 @@ PODS:
   - Argo (0.3.2):
     - Runes
   - Expecta (0.3.1)
+  - HanekeSwift (0.8.1)
   - OCMock (3.1.2)
   - OHHTTPStubs (3.1.10):
     - OHHTTPStubs/Core (= 3.1.10)
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - Alamofire (~> 1.1)
   - Argo (from `https://github.com/thoughtbot/Argo`)
   - Expecta
+  - HanekeSwift (from `https://github.com/frootloops/HanekeSwift`)
   - OCMock
   - OHHTTPStubs
   - Specta
@@ -21,16 +23,22 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   Argo:
     :git: https://github.com/thoughtbot/Argo
+  HanekeSwift:
+    :git: https://github.com/frootloops/HanekeSwift
 
 CHECKOUT OPTIONS:
   Argo:
     :commit: 58ed33870dc06fae3616b8b45d2c1ded1973a84b
     :git: https://github.com/thoughtbot/Argo
+  HanekeSwift:
+    :commit: bf6011a5b835cb59c80ba25e256abb292b9e47fa
+    :git: https://github.com/frootloops/HanekeSwift
 
 SPEC CHECKSUMS:
   Alamofire: 524225da382071ee3e6d0badd0ee4b4dc36740de
   Argo: f99f70372dfabaf22b781a8391c585323e8df55b
   Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
+  HanekeSwift: deed60b9cc2b5cfe301737acf57e2df09b8bd2a2
   OCMock: ecdd510b73ef397f2f97274785c1e87fd147c49f
   OHHTTPStubs: 2038e929b6abb94881000524c1cb4aba0a1bb4a2
   Runes: 5268f17b84bd4522494a3ab3291f18c84e3e9924
