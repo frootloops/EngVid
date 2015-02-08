@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "45569475973EB8558822A6BD"
-               BuildableName = "EngVid.app"
-               BlueprintName = "EngVid"
-               ReferencedContainer = "container:EngVid.xcodeproj">
+               BuildableName = "EngVideos.app"
+               BlueprintName = "EngVideos"
+               ReferencedContainer = "container:EngVideos.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "B49251ACE7BF531F4B5205DF"
                BuildableName = "UnitTests.xctest"
                BlueprintName = "UnitTests"
-               ReferencedContainer = "container:EngVid.xcodeproj">
+               ReferencedContainer = "container:EngVideos.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "45569475973EB8558822A6BD"
-            BuildableName = "EngVid.app"
-            BlueprintName = "EngVid"
-            ReferencedContainer = "container:EngVid.xcodeproj">
+            BuildableName = "EngVideos.app"
+            BlueprintName = "EngVideos"
+            ReferencedContainer = "container:EngVideos.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "45569475973EB8558822A6BD"
-            BuildableName = "EngVid.app"
-            BlueprintName = "EngVid"
-            ReferencedContainer = "container:EngVid.xcodeproj">
+            BuildableName = "EngVideos.app"
+            BlueprintName = "EngVideos"
+            ReferencedContainer = "container:EngVideos.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "45569475973EB8558822A6BD"
-            BuildableName = "EngVid.app"
-            BlueprintName = "EngVid"
-            ReferencedContainer = "container:EngVid.xcodeproj">
+            BuildableName = "EngVideos.app"
+            BlueprintName = "EngVideos"
+            ReferencedContainer = "container:EngVideos.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

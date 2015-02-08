@@ -15,6 +15,7 @@
 		816EB4321A8004DD00A2A66A /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816EB4311A8004DD00A2A66A /* Video.swift */; };
 		816EB4641A800D1700A2A66A /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816EB4631A800D1700A2A66A /* VideoViewController.swift */; };
 		816EB4661A80BABD00A2A66A /* VideoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816EB4651A80BABD00A2A66A /* VideoExtension.swift */; };
+		81C68E381A877D9E0024502C /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C68E371A877D9E0024502C /* WatchViewController.swift */; };
 		8A353779CE7E8544C6EB197D /* LaunchScreen.xib in Sources */ = {isa = PBXBuildFile; fileRef = BEC5FFC79E0627EF7C38EBD6 /* LaunchScreen.xib */; };
 		95FA0682BFE7BEB357ED9EF8 /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 3F27B2F243E3F53728A1B30B /* Main.storyboard */; };
 		EDE6F6DA0DD30B5687742C6B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B33DE8AF63495AFFC46C1F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -42,6 +43,7 @@
 		816EB4311A8004DD00A2A66A /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; tabWidth = 2; wrapsLines = 0; };
 		816EB4631A800D1700A2A66A /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; tabWidth = 2; wrapsLines = 0; };
 		816EB4651A80BABD00A2A66A /* VideoExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = VideoExtension.swift; sourceTree = "<group>"; tabWidth = 2; wrapsLines = 0; };
+		81C68E371A877D9E0024502C /* WatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
 		9C68BD852B0F4028F41A79B5 /* Pods-unit_tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit_tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-unit_tests/Pods-unit_tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB10813C7A0B8F4778F629BA /* libPods-unit_tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-unit_tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC5FFC79E0627EF7C38EBD6 /* LaunchScreen.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -49,7 +51,7 @@
 		E3EF41E07637B0B78680F2F3 /* Pods-unit_tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit_tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-unit_tests/Pods-unit_tests.release.xcconfig"; sourceTree = "<group>"; };
 		F5B33DE8AF63495AFFC46C1F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F961613EEC71A29CD1A21502 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC29C60A3EE778C465A346CF /* EngVid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngVid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC29C60A3EE778C465A346CF /* EngVideos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngVideos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +102,7 @@
 		42C3B27430F4201D080F7FA3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC29C60A3EE778C465A346CF /* EngVid.app */,
+				FC29C60A3EE778C465A346CF /* EngVideos.app */,
 				D31A0312F875D334DA2A2D50 /* UnitTests.xctest */,
 			);
 			name = Products;
@@ -222,6 +224,7 @@
 			children = (
 				6734A23798CF9AF85D4162DB /* AppDelegate.swift */,
 				816EB4631A800D1700A2A66A /* VideoViewController.swift */,
+				81C68E371A877D9E0024502C /* WatchViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,9 +259,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		45569475973EB8558822A6BD /* EngVid */ = {
+		45569475973EB8558822A6BD /* EngVideos */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B9EF51E7379C9A97732CE2E /* Build configuration list for PBXNativeTarget "EngVid" */;
+			buildConfigurationList = 1B9EF51E7379C9A97732CE2E /* Build configuration list for PBXNativeTarget "EngVideos" */;
 			buildPhases = (
 				FF15E7F121C8674AE930CFCB /* Check Pods Manifest.lock */,
 				142C2651679666D6E4AC650B /* Sources */,
@@ -272,9 +275,9 @@
 			);
 			dependencies = (
 			);
-			name = EngVid;
+			name = EngVideos;
 			productName = EngVid;
-			productReference = FC29C60A3EE778C465A346CF /* EngVid.app */;
+			productReference = FC29C60A3EE778C465A346CF /* EngVideos.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B49251ACE7BF531F4B5205DF /* UnitTests */ = {
@@ -312,7 +315,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F250D221575CF2339A7D38F2 /* Build configuration list for PBXProject "EngVid" */;
+			buildConfigurationList = F250D221575CF2339A7D38F2 /* Build configuration list for PBXProject "EngVideos" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -324,7 +327,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				45569475973EB8558822A6BD /* EngVid */,
+				45569475973EB8558822A6BD /* EngVideos */,
 				B49251ACE7BF531F4B5205DF /* UnitTests */,
 			);
 		};
@@ -450,6 +453,7 @@
 				816EB4321A8004DD00A2A66A /* Video.swift in Sources */,
 				95FA0682BFE7BEB357ED9EF8 /* Main.storyboard in Sources */,
 				816EB4641A800D1700A2A66A /* VideoViewController.swift in Sources */,
+				81C68E381A877D9E0024502C /* WatchViewController.swift in Sources */,
 				8A353779CE7E8544C6EB197D /* LaunchScreen.xib in Sources */,
 				816EB4661A80BABD00A2A66A /* VideoExtension.swift in Sources */,
 			);
@@ -467,7 +471,7 @@
 /* Begin PBXTargetDependency section */
 		F03B887AB1788D997BF18FBB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 45569475973EB8558822A6BD /* EngVid */;
+			target = 45569475973EB8558822A6BD /* EngVideos */;
 			targetProxy = 2E53EDF3FF3F5F505A760461 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -496,7 +500,7 @@
 					"-DNS_BLOCK_ASSERTIONS=1",
 					"$(inherited)",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EngVideos;
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -572,7 +576,7 @@
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EngVideos;
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 			};
@@ -682,7 +686,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1B9EF51E7379C9A97732CE2E /* Build configuration list for PBXNativeTarget "EngVid" */ = {
+		1B9EF51E7379C9A97732CE2E /* Build configuration list for PBXNativeTarget "EngVideos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06CC2FC6DD9E1395F6BCB263 /* Release */,
@@ -691,7 +695,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F250D221575CF2339A7D38F2 /* Build configuration list for PBXProject "EngVid" */ = {
+		F250D221575CF2339A7D38F2 /* Build configuration list for PBXProject "EngVideos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C4481C7D2F56BCEFC3AB8427 /* Debug */,

@@ -19,7 +19,18 @@ class VideoViewController: UITableViewController, UITableViewDelegate, UITableVi
     super.viewDidLoad()
     loadVideos()
   }
-    
+
+  // MARK: - Segues
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "play" {
+      if let indexPath = self.tableView.indexPathForSelectedRow() {
+        let video = videos[indexPath.row] as Video
+        (segue.destinationViewController as WatchViewController).video = video
+      }
+    }
+  }
+  
   @IBAction func refresh(sender: UIRefreshControl) {
     currentPage = 1
     Alamofire.request(.GET, "https://engvid.herokuapp.com/api/videos", parameters: ["page": currentPage])

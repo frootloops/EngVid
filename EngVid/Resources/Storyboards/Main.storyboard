@@ -25,7 +25,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="TiF-a6-Gbr">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TiF-a6-Gbr">
                                             <rect key="frame" x="8" y="10" width="106" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="a7p-gV-Odb"/>
@@ -56,6 +56,7 @@
                                     <outlet property="cover" destination="TiF-a6-Gbr" id="skr-ea-dnT"/>
                                     <outlet property="tags" destination="xZD-ZP-iEh" id="jp9-p7-2la"/>
                                     <outlet property="title" destination="G2Z-EC-iFJ" id="T8n-jh-pEw"/>
+                                    <segue destination="scx-mZ-PKv" kind="show" identifier="play" id="aWg-hh-MD4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -74,7 +75,50 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vq9-VX-GFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="499" y="444"/>
+            <point key="canvasLocation" x="355" y="444"/>
+        </scene>
+        <!--Watch View Controller-->
+        <scene sceneID="8bb-iP-8YC">
+            <objects>
+                <viewController id="scx-mZ-PKv" customClass="WatchViewController" customModule="EngVid" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2qL-Ya-0EZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="tUU-Gd-td1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rwC-bM-CDx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YNW-TV-EfD">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="lQF-dr-IJl">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="ugh-kv-HKI">
+                                            <connections>
+                                                <action selector="back:" destination="scx-mZ-PKv" id="LZd-La-sWR"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Pq-jp-EkE">
+                                <rect key="frame" x="-37" y="20" width="600" height="556"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="B5i-tf-unb"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="web" destination="8Pq-jp-EkE" id="8hM-io-7CF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zt8-0d-YpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1108" y="444"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e6I-NH-Oso">
@@ -93,7 +137,4 @@
             <point key="canvasLocation" x="-322" y="444"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Image" width="320" height="180"/>
-    </resources>
 </document>
