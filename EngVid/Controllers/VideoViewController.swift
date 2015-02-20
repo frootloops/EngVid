@@ -10,7 +10,8 @@ import UIKit
 import Alamofire
 import Argo
 
-class VideoViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
+class VideoViewController: UITableViewController, UITableViewDelegate, UISearchBarDelegate {
+  @IBOutlet weak var searchBarInput: UISearchBar!
   var app = UIApplication.sharedApplication()
   var videos = [Video]()
   var currentPage = 1
@@ -18,7 +19,31 @@ class VideoViewController: UITableViewController, UITableViewDelegate, UITableVi
   override func viewDidLoad() {
     super.viewDidLoad()
     loadVideos()
+    searchBarInput.delegate = self
   }
+  
+  // MARK: - Search
+
+  func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    currentPage = 1
+    Alamofire.request(.GET, "https://engvid.herokuapp.com/api/videos", parameters: ["page": currentPage, "q": searchBar.text])
+      .responseJSON { (_, _, JSON, _) in
+        let documents = JSON!.valueForKey("documents") as [NSDictionary]
+        self.videos = documents.map { Video.decode(JSONValue.parse($0))! }
+        self.tableView.reloadData()
+    }
+    searchBar.resignFirstResponder()
+  }
+  
+  func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    if searchBar.text == ""{
+      currentPage = 1
+      videos = []
+      loadVideos()
+      searchBar.resignFirstResponder()
+    }
+  }
+
 
   // MARK: - Segues
   
@@ -49,7 +74,7 @@ class VideoViewController: UITableViewController, UITableViewDelegate, UITableVi
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Video", forIndexPath: indexPath) as VideoCell
+    let cell = self.tableView.dequeueReusableCellWithIdentifier("Video", forIndexPath: indexPath) as VideoCell
     cell.video = videos[indexPath.row] as Video
     return cell
   }

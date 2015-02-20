@@ -18,15 +18,8 @@ class VideoCell: UITableViewCell {
     didSet { fill() }
   }
 
-  override func awakeFromNib() {
-    super.awakeFromNib()
-  }
-  
-  override func setSelected(selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-  }
-  
   func fill() {
+    cover.image = nil
     title.text = video.title
     tags.text = ", ".join(video.tags)
     cover.hnk_setImageFromURL(video.cover)
