@@ -15,6 +15,7 @@ class WatchViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     web.mediaPlaybackRequiresUserAction = false
+    view.clipsToBounds = true
     web.loadRequest(NSURLRequest(URL: NSURL(string: "http://m.youtube.com/watch?v=\(video.token)&autoplay=1&hd=1")!))
     
      NSNotificationCenter.defaultCenter().addObserver(self, selector: "playbackStateDidChange:", name: UIWindowDidBecomeHiddenNotification, object: nil)
